@@ -1,0 +1,233 @@
+import { useRef } from 'react'
+import { WarningAlt } from '@carbon/icons-react'
+import SlideLayout from '../common/SlideLayout'
+import useSlideAnimation from '../../hooks/useSlideAnimation'
+
+const STEPS = [
+  {
+    num: 'STEP 1',
+    label: '광고 소재 제작',
+    desc: '병·의원이 텍스트·이미지·영상 광고 소재를 준비',
+    hurdle: null,
+    side: 'left',
+  },
+  {
+    num: 'STEP 2',
+    label: '심의 신청·접수',
+    desc: '대한의사협회에 광고 심의를 신청',
+    hurdle: '연간 45,000건 심의 요청 적체',
+    side: 'right',
+  },
+  {
+    num: 'STEP 3',
+    label: '수기 검토',
+    desc: '심의관이 의료법·가이드라인 기준으로 1건씩 수동 검토',
+    hurdle: '100% 인력 의존, 일관성 유지 어려움',
+    side: 'left',
+  },
+  {
+    num: 'STEP 4',
+    label: '심의 결과 통보',
+    desc: '승인/불승인 결과 및 사유 전달',
+    hurdle: '3주~3개월 소요',
+    side: 'right',
+  },
+  {
+    num: 'STEP 5',
+    label: '수정·재심의',
+    desc: '불승인 시 수정 후 재신청, 처음부터 다시 대기',
+    hurdle: '추가 수개월, 기회 비용 극대화',
+    side: 'left',
+  },
+]
+
+export default function Slide13_AdReviewProblem() {
+  const ref = useRef(null)
+
+  useSlideAnimation(ref, (gsap) => {
+    const tl = gsap.timeline({
+      scrollTrigger: { trigger: ref.current, start: 'top 80%' },
+    })
+
+    tl.from('.s13-header', { opacity: 0, x: -30, duration: 0.6 })
+      .from('.s13-timeline-line', { scaleY: 0, transformOrigin: 'top center', duration: 1.2, ease: 'power2.inOut' }, '-=0.3')
+      .from('.s13-dot', { opacity: 0, scale: 0, stagger: 0.15, duration: 0.3 }, '-=0.8')
+      .from('.s13-dash', { scaleX: 0, stagger: 0.1, duration: 0.3 }, '-=0.6')
+      .from('.s13-step', { opacity: 0, y: 15, stagger: 0.12, duration: 0.5 }, '-=0.6')
+      .from('.s13-hurdle', { opacity: 0, scale: 0.9, stagger: 0.1, duration: 0.3, ease: 'back.out(1.7)' }, '-=0.4')
+  })
+
+  return (
+    <SlideLayout id="slide-13" ref={ref}>
+      <style>{`
+        .s13-dot-danger {
+          animation: s13pulse 1s ease-in-out infinite;
+        }
+        @keyframes s13pulse {
+          0%, 100% { box-shadow: 0 0 0 2px #fecdd3, 0 0 0 4px rgba(225,29,72,0); }
+          50% { box-shadow: 0 0 0 2px #fecdd3, 0 0 12px 6px rgba(225,29,72,0.25); }
+        }
+      `}</style>
+      <div style={{ display: 'flex', gap: '3rem', height: '100%', alignItems: 'center' }}>
+
+        {/* Left: Title */}
+        <div className="s13-header" style={{ flex: '0 0 28%' }}>
+          <p className="section-label" style={{ color: '#e11d48' }}>BARRIER</p>
+          <h2 style={{
+            fontSize: '2.5rem', fontWeight: 900, color: '#0f172a',
+            lineHeight: 1.3, letterSpacing: '-0.02em', marginBottom: '1.25rem',
+            whiteSpace: 'nowrap',
+          }}>
+            의료광고 심의의 벽
+          </h2>
+          <p style={{
+            fontSize: '1rem', color: '#64748b', lineHeight: 1.7, marginBottom: '3.5rem',
+            whiteSpace: 'nowrap',
+          }}>
+            최적의 광고 전략을 세웠어도, 실행 단계에서 마주치는 행정적 병목
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            {[
+              { value: '3주~3개월', label: '평균 심의 소요' },
+              { value: '45,000+', label: '연간 심의 건수' },
+              { value: '100%', label: '수기 검토' },
+            ].map((s) => (
+              <div key={s.label}>
+                <p style={{ fontSize: 'clamp(1.5rem, 2.5vh, 2.25rem)', fontWeight: 700, color: '#e11d48', lineHeight: 1 }}>{s.value}</p>
+                <p style={{ fontSize: 'clamp(0.75rem, 1.2vh, 1.125rem)', color: '#9f1239', marginTop: '1rem' }}>{s.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Right: Vertical zigzag timeline */}
+        <div style={{
+          flex: 1, position: 'relative',
+          display: 'flex', justifyContent: 'center',
+        }}>
+          {/* Center vertical line */}
+          <div className="s13-timeline-line" style={{
+            position: 'absolute', left: '60%', top: 0, bottom: 0,
+            width: '2px', background: '#e2e8f0',
+            transform: 'translateX(-50%)',
+          }} />
+
+          <div style={{
+            display: 'flex', flexDirection: 'column', gap: '1.5rem',
+            width: '100%',
+          }}>
+            {STEPS.map((step) => (
+              <div key={step.num} style={{
+                display: 'flex', alignItems: 'center',
+                position: 'relative',
+              }}>
+                {/* Dot — absolutely centered on the timeline */}
+                <div style={{
+                  position: 'absolute', left: '60%', top: '50%',
+                  transform: 'translate(-50%, -50%)', zIndex: 2,
+                }}>
+                  <div className={`s13-dot${step.hurdle ? ' s13-dot-danger' : ''}`} style={{
+                    width: '14px', height: '14px', borderRadius: '50%',
+                    background: step.hurdle ? '#e11d48' : '#334155',
+                    border: '3px solid white',
+                    boxShadow: step.hurdle ? undefined : '0 0 0 2px #e2e8f0',
+                  }} />
+                </div>
+
+                {/* Dash line — from dot toward content */}
+                <div className="s13-dash" style={{
+                  position: 'absolute', top: '50%',
+                  transform: 'translateY(-50%)',
+                  ...(step.side === 'left'
+                    ? { right: '40%', marginRight: '7px', width: '5rem' }
+                    : { left: '60%', marginLeft: '7px', width: '5rem' }
+                  ),
+                  height: '0px',
+                  borderTop: `2px dashed ${step.hurdle ? '#fecdd3' : '#cbd5e1'}`,
+                  transformOrigin: step.side === 'left' ? 'right center' : 'left center',
+                }} />
+
+                {/* Left half */}
+                <div style={{
+                  flex: '0 0 60%',
+                  textAlign: 'right',
+                  paddingRight: '7rem',
+                }}>
+                  {step.side === 'left' && (
+                    <div className="s13-step">
+                      <p style={{
+                        fontSize: 'clamp(0.625rem, 1vh, 0.9375rem)', fontWeight: 700, letterSpacing: '0.12em',
+                        color: step.hurdle ? '#e11d48' : '#94a3b8',
+                        textTransform: 'uppercase', marginBottom: '0.25rem',
+                      }}>
+                        {step.num}
+                      </p>
+                      <p style={{
+                        fontSize: 'clamp(1.125rem, 1.8vh, 1.6875rem)', fontWeight: 800, color: '#0f172a',
+                        marginBottom: '0.25rem',
+                      }}>
+                        {step.label}
+                      </p>
+                      <p style={{ fontSize: 'clamp(0.75rem, 1.2vh, 1.125rem)', color: '#64748b', lineHeight: 1.5 }}>
+                        {step.desc}
+                      </p>
+                      {step.hurdle && (
+                        <div className="s13-hurdle" style={{
+                          display: 'inline-flex', alignItems: 'center', gap: '0.25rem',
+                          marginTop: '0.5rem',
+                        }}>
+                          <span style={{ fontSize: 'clamp(0.6875rem, 1.1vh, 1rem)', fontWeight: 700, color: '#e11d48' }}>
+                            {step.hurdle}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                {/* Right half */}
+                <div style={{
+                  flex: '0 0 40%',
+                  textAlign: 'left',
+                  paddingLeft: '7rem',
+                }}>
+                  {step.side === 'right' && (
+                    <div className="s13-step">
+                      <p style={{
+                        fontSize: 'clamp(0.625rem, 1vh, 0.9375rem)', fontWeight: 700, letterSpacing: '0.12em',
+                        color: step.hurdle ? '#e11d48' : '#94a3b8',
+                        textTransform: 'uppercase', marginBottom: '0.25rem',
+                      }}>
+                        {step.num}
+                      </p>
+                      <p style={{
+                        fontSize: 'clamp(1.125rem, 1.8vh, 1.6875rem)', fontWeight: 800, color: '#0f172a',
+                        marginBottom: '0.25rem',
+                      }}>
+                        {step.label}
+                      </p>
+                      <p style={{ fontSize: 'clamp(0.75rem, 1.2vh, 1.125rem)', color: '#64748b', lineHeight: 1.5 }}>
+                        {step.desc}
+                      </p>
+                      {step.hurdle && (
+                        <div className="s13-hurdle" style={{
+                          display: 'inline-flex', alignItems: 'center', gap: '0.25rem',
+                          marginTop: '0.5rem',
+                        }}>
+                          <span style={{ fontSize: 'clamp(0.6875rem, 1.1vh, 1rem)', fontWeight: 700, color: '#e11d48' }}>
+                            {step.hurdle}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </SlideLayout>
+  )
+}
