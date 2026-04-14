@@ -4,7 +4,7 @@ import SlideLayout from '../common/SlideLayout'
 import { useAutoPlay } from '../../contexts/AutoPlayContext'
 import displayMockup from '../../../assets/mockups/Apple Pro Display XDR.png'
 import clipImage from '../../../assets/images/slide02-clip-image-01.png'
-import clipVideo from '../../../assets/videos/slide02-clip01.mov'
+import clipVideo from '../../../assets/videos/slide02-clip01.mp4'
 
 export default function Slide02_GeneralAI() {
   const ref = useRef(null)

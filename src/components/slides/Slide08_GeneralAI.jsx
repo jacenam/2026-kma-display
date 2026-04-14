@@ -4,7 +4,7 @@ import SlideLayout from '../common/SlideLayout'
 import { useAutoPlay } from '../../contexts/AutoPlayContext'
 import displayMockup from '../../../assets/mockups/Apple Pro Display XDR.png'
 import clipImage from '../../../assets/images/slide08-clip-image-03.png'
-import clipVideo from '../../../assets/videos/slide08-clip03.mov'
+import clipVideo from '../../../assets/videos/slide08-clip03.mp4'
 
 export default function Slide08_GeneralAI() {
   const ref = useRef(null)
