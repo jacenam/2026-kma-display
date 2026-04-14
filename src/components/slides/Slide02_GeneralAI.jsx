@@ -315,7 +315,35 @@ export default function Slide02_GeneralAI() {
                 pointerEvents: 'none',
               }}
             />
-            {stage < 2 ? (
+            {/* Video is always mounted so the browser can preload it —
+                eliminates the black flash when switching from image to video. */}
+            <video
+              ref={videoRef}
+              src={clipVideo}
+              muted
+              playsInline
+              preload="auto"
+              onEnded={() => {
+                if (!ref.current) return
+                const rect = ref.current.getBoundingClientRect()
+                if (Math.abs(rect.top) >= window.innerHeight * 0.5) return
+                if (!isAutoPlaying) return
+                document.getElementById('slide-03')?.scrollIntoView({ behavior: 'smooth' })
+              }}
+              style={{
+                position: 'absolute',
+                top: 'calc(1.2% + 2px)',
+                left: '2.25%',
+                width: '95.5%',
+                height: '73.6%',
+                objectFit: 'contain',
+                background: '#000',
+                zIndex: 1,
+                opacity: stage === 2 ? 1 : 0,
+                pointerEvents: stage === 2 ? 'auto' : 'none',
+              }}
+            />
+            {stage < 2 && (
               <img
                 src={clipImage}
                 alt=""
@@ -326,30 +354,6 @@ export default function Slide02_GeneralAI() {
                   width: '95.5%',
                   height: '79.4%',
                   objectFit: 'contain',
-                  zIndex: 1,
-                }}
-              />
-            ) : (
-              <video
-                ref={videoRef}
-                src={clipVideo}
-                muted
-                playsInline
-                onEnded={() => {
-                  if (!ref.current) return
-                  const rect = ref.current.getBoundingClientRect()
-                  if (Math.abs(rect.top) >= window.innerHeight * 0.5) return
-                  if (!isAutoPlaying) return
-                  document.getElementById('slide-03')?.scrollIntoView({ behavior: 'smooth' })
-                }}
-                style={{
-                  position: 'absolute',
-                  top: 'calc(1.2% + 2px)',
-                  left: '2.25%',
-                  width: '95.5%',
-                  height: '73.6%',
-                  objectFit: 'contain',
-                  background: '#000',
                   zIndex: 1,
                 }}
               />
