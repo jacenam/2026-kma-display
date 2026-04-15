@@ -12,7 +12,6 @@ export default function Slide02_GeneralAI() {
   const mockupInnerRef = useRef(null)
   const leftRef = useRef(null)
   const [stage, setStage] = useState(0) // 0=normal, 1=expanding, 2=video
-  const [mountKey, setMountKey] = useState(0)
   const [isActiveSlide, setIsActiveSlide] = useState(false)
   const { isAutoPlaying } = useAutoPlay()
   const isAnimatingRef = useRef(false)
@@ -120,9 +119,14 @@ export default function Slide02_GeneralAI() {
       }
       gsap.killTweensOf(mockupInnerRef.current)
       gsap.killTweensOf(leftRef.current)
+      if (mockupInnerRef.current) {
+        gsap.set(mockupInnerRef.current, { clearProps: 'transform' })
+      }
+      if (leftRef.current) {
+        gsap.set(leftRef.current, { clearProps: 'opacity,transform' })
+      }
       isAnimatingRef.current = false
       setStage(0)
-      setMountKey((k) => k + 1)
     }
 
     const observer = new IntersectionObserver(
@@ -245,7 +249,7 @@ export default function Slide02_GeneralAI() {
           50% { text-shadow: 0 0 20px rgba(17,95,173,0.9), 0 0 40px rgba(17,95,173,0.6), 0 0 60px rgba(17,95,173,0.35); }
         }
       `}</style>
-      <div key={mountKey} style={{
+      <div style={{
         display: 'flex', gap: '5rem', height: '100%', alignItems: 'center',
       }}>
         {/* Left: Text content */}
@@ -302,6 +306,8 @@ export default function Slide02_GeneralAI() {
             position: 'relative',
             width: '36rem',
             marginTop: '3rem',
+            willChange: 'transform',
+            backfaceVisibility: 'hidden',
           }}>
             <img
               src={displayMockup}

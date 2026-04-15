@@ -31,40 +31,41 @@ export default function Slide01_Title() {
     return () => observer.disconnect()
   }, [])
 
-  // Auto-advance to slide-02 after 2s when active + auto-playing
+  // Auto-advance to slide-02 after 3s when active + auto-playing
   useEffect(() => {
     if (!isActive || !isAutoPlaying) return
     const t = setTimeout(() => {
       document.getElementById('slide-02')?.scrollIntoView({ behavior: 'smooth' })
-    }, 2000)
+    }, 3000)
     return () => clearTimeout(t)
   }, [isActive, isAutoPlaying])
 
   return (
     <section id="slide-01" ref={ref} className="slide" style={{
       position: 'relative', overflow: 'hidden',
-      background: 'linear-gradient(135deg, #eff5fc 0%, #dde9f5 45%, #c9d9ec 100%)',
+      background: 'radial-gradient(ellipse at 25% 20%, #f2f7fc 0%, #dde8f4 35%, #c2d4e7 70%, #a8bfd8 100%)',
     }}>
       <style>{`
         .s01-kma {
           background: linear-gradient(
             90deg,
             var(--color-primary) 0%,
-            var(--color-primary) 35%,
+            var(--color-primary) 40%,
             #7fb4ff 50%,
-            var(--color-primary) 65%,
+            var(--color-primary) 60%,
             var(--color-primary) 100%
           );
           background-size: 250% auto;
+          background-repeat: no-repeat;
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
           color: transparent;
-          animation: s01KmaShimmer 3s linear infinite;
+          animation: s01KmaShimmer 2s linear infinite;
         }
         @keyframes s01KmaShimmer {
-          0% { background-position: 200% center; }
-          100% { background-position: -50% center; }
+          0% { background-position: 100% center; }
+          100% { background-position: 0% center; }
         }
       `}</style>
       <div className="s01-bg" style={{
@@ -86,12 +87,12 @@ export default function Slide01_Title() {
           대한의사협회 통합정보시스템 리뉴얼 소개
         </p>
 
-        <h1 className="s01-title" style={{
+        <h1 className="s01-title s01-kma" style={{
           fontSize: '3.75rem', fontWeight: 900, lineHeight: 1.25,
-          letterSpacing: '-0.02em', color: '#1a1a1a',
+          letterSpacing: '-0.02em',
           whiteSpace: 'nowrap',
         }}>
-          2026 <span className="s01-kma">KMA</span> 정기 대위원 총회
+          2026 KMA 정기 대위원 총회
         </h1>
       </div>
     </section>

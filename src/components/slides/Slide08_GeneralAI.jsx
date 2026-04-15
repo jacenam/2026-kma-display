@@ -13,7 +13,6 @@ export default function Slide08_GeneralAI() {
   const leftRef = useRef(null)
   const [stage, setStage] = useState(0) // 0=normal, 1=expanding, 2=video
   const [darkTheme, setDarkTheme] = useState(false)
-  const [mountKey, setMountKey] = useState(0) // bump to force-remount mockup subtree
   const [isActiveSlide, setIsActiveSlide] = useState(false)
   const { isAutoPlaying } = useAutoPlay()
   const darkThemeTimerRef = useRef(null)
@@ -144,6 +143,12 @@ export default function Slide08_GeneralAI() {
       }
       gsap.killTweensOf(mockupInnerRef.current)
       gsap.killTweensOf(leftRef.current)
+      if (mockupInnerRef.current) {
+        gsap.set(mockupInnerRef.current, { clearProps: 'transform' })
+      }
+      if (leftRef.current) {
+        gsap.set(leftRef.current, { clearProps: 'opacity,transform' })
+      }
       if (darkThemeTimerRef.current) {
         clearTimeout(darkThemeTimerRef.current)
         darkThemeTimerRef.current = null
@@ -151,7 +156,6 @@ export default function Slide08_GeneralAI() {
       isAnimatingRef.current = false
       setStage(0)
       setDarkTheme(false)
-      setMountKey((k) => k + 1)
     }
 
     const observer = new IntersectionObserver(
@@ -273,7 +277,7 @@ export default function Slide08_GeneralAI() {
           50% { text-shadow: 0 0 12px rgba(17,95,173,0.4), 0 0 24px rgba(17,95,173,0.2); }
         }
       `}</style>
-      <div key={mountKey} style={{
+      <div style={{
         display: 'flex', gap: '5rem', height: '100%', alignItems: 'center',
       }}>
         {/* Left: Text content */}
@@ -330,6 +334,8 @@ export default function Slide08_GeneralAI() {
             position: 'relative',
             width: '36rem',
             marginTop: '3rem',
+            willChange: 'transform',
+            backfaceVisibility: 'hidden',
           }}>
             <img
               src={displayMockup}
