@@ -265,28 +265,29 @@ export default function Slide04_GeneralAI() {
             lineHeight: 1.35, letterSpacing: '-0.02em', marginBottom: '1.5rem',
             whiteSpace: 'nowrap',
           }}>
-            협회 내부 데이터 기반,<br />
-            신뢰할 수 있는 철통 보안 답변
+            강력한 보안 체계 위에서<br />
+            누리는 안전한 지식 공유
           </h2>
 
           <p style={{
             fontSize: '1rem', color: '#334155', lineHeight: 1.8,
           }}>
-            의사협회 내부의 공신력 있는 자료만을 탐색하여 답변하며,<br />
-            외부 유출 걱정 없이 안전하게 활용할 수 있는 업무 전용 챗봇입니다.
+            민감한 내부 정보부터 일반 공개 자료까지,<br />
+            권한별 정교한 필터링으로 정보 유출 없는 안전한 지식 관리를 실현합니다.
           </p>
 
           <p className="s04-privacy-title" style={{
             fontSize: '0.875rem', fontWeight: 700, color: 'var(--color-primary)',
             marginTop: '2.5rem', marginBottom: '0.5rem',
           }}>
-            내부 출처 명시화
+            철저한 내부 자료보호
           </p>
           <p style={{
             fontSize: '0.8125rem', color: '#64748b', lineHeight: 1.7,
           }}>
-            답변의 근거가 되는 내부 출처(Reference)를 명확히 제시하여,<br />
-            실무 데이터의 정확성과 보안성을 동시에 확보했습니다.
+            외부로 유출되어선 안 될 협회 지식 자산을 안전하게 보호합니다.<br />
+            직책과 역할에 따라 열람 가능한 정보를 엄격히 구분하여,<br />
+            행정 효율은 높이고 보안 리스크는 차단하는 스마트한 업무 환경을 제공합니다.
           </p>
 
           <p style={{

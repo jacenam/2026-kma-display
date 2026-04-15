@@ -267,28 +267,29 @@ export default function Slide02_GeneralAI() {
             lineHeight: 1.35, letterSpacing: '-0.02em', marginBottom: '1.5rem',
             whiteSpace: 'nowrap',
           }}>
-            세상의 모든 지식을 한곳에,<br />
-            스마트한 업무 파트너
+            근거 있는 답변으로<br />
+            쌓아가는 협회와 회원의 신뢰
           </h2>
 
           <p style={{
             fontSize: '1rem', color: '#334155', lineHeight: 1.8,
           }}>
-            외부 AI의 방대한 데이터를 활용하여 일상적인<br />
-            궁금증부터 전문적인 상식까지 폭넓은 답변을 제공합니다.
+            방대한 협회 자료와 AI를 결합해 정보 탐색의 어려움을 해결하고,<br />
+            근거 중심의 신뢰할 수 있는 답변으로 소통의 질을 높입니다.
           </p>
 
           <p className="s02-privacy-title" style={{
             fontSize: '0.875rem', fontWeight: 700, color: 'var(--color-primary)',
             marginTop: '2.5rem', marginBottom: '0.5rem',
           }}>
-            기초 자료 검색 효율 극대화
+            근거 자료 검색 효율 극대화
           </p>
           <p style={{
             fontSize: '0.8125rem', color: '#64748b', lineHeight: 1.7,
           }}>
-            광범위한 주제에 대한 즉각적인 정보 확인이 가능하여, 아이디어 스케치나<br />
-            기초 자료 수집 시 최고의 효율을 자랑합니다.
+            협회 내부 자료를 기반으로 한 확신 있는 답변을 제공합니다.<br />
+            임직원은 정보 확인 시간을 줄여 본연의 업무에 집중하고,<br />
+            회원은 신속하고 정확한 피드백으로 협회에 대한 신뢰를 쌓아갑니다.
           </p>
 
           <p style={{
