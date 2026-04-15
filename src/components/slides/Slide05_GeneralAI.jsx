@@ -286,15 +286,15 @@ export default function Slide05_GeneralAI() {
             lineHeight: 1.35, letterSpacing: '-0.02em', marginBottom: '1.5rem',
             whiteSpace: 'nowrap',
           }}>
-            언제 어디서나 내 손안의<br />
-            똑똑한 업무 환경
+            시공간의 제약 없이<br />
+            언제 어디서나 연결되는 협회 AI
           </h2>
 
           <p style={{
             fontSize: '1rem', color: '#cbd5e1', lineHeight: 1.8,
           }}>
-            모바일 기기에 최적화된 반응형 인터페이스를 통해<br />
-            PC와 동일한 수준의 사용자 경험을 제공합니다.
+            PC, 스마트폰 등 기기에 상관없이<br />
+            협회의 모든 지식을 실시간으로 활용할 수 있습니다.
           </p>
 
           <p className="s05-privacy-title" style={{
@@ -306,8 +306,9 @@ export default function Slide05_GeneralAI() {
           <p style={{
             fontSize: '0.8125rem', color: '#94a3b8', lineHeight: 1.7,
           }}>
-            장소에 구애받지 않고 이동 중에도 신속하게 업무 자료를 확인하고<br />
-            질문할 수 있는 극강의 휴대성을 제공합니다.
+            바쁜 진료 중에도, 외부 활동 중에도 협회 정보 접근에 불편함이 없어야 합니다.<br />
+            어떤 디바이스에서도 최적화된 화면으로, 필요한 순간 언제 어디서나<br />
+            즉각 연결되는 유연한 디지털 환경을 제공합니다.
           </p>
 
           <p style={{

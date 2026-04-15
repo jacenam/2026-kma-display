@@ -265,15 +265,15 @@ export default function Slide04_GeneralAI() {
             lineHeight: 1.35, letterSpacing: '-0.02em', marginBottom: '1.5rem',
             whiteSpace: 'nowrap',
           }}>
-            협회 내부 데이터 기반,<br />
-            신뢰할 수 있는 철통 보안 답변
+            근거 있는 답변으로<br />
+            쌓아가는 협회와 회원의 신뢰
           </h2>
 
           <p style={{
             fontSize: '1rem', color: '#334155', lineHeight: 1.8,
           }}>
-            의사협회 내부의 공신력 있는 자료만을 탐색하여 답변하며,<br />
-            외부 유출 걱정 없이 안전하게 활용할 수 있는 업무 전용 챗봇입니다.
+            근거 중심의 신뢰할 수 있는 답변으로 소통의 질을 높입니다.<br />
+            협회 내부 자료를 기반으로 한 확신 있는 답변을 제공합니다.
           </p>
 
           <p className="s04-privacy-title" style={{
@@ -285,8 +285,8 @@ export default function Slide04_GeneralAI() {
           <p style={{
             fontSize: '0.8125rem', color: '#64748b', lineHeight: 1.7,
           }}>
-            답변의 근거가 되는 내부 출처(Reference)를 명확히 제시하여,<br />
-            실무 데이터의 정확성과 보안성을 동시에 확보했습니다.
+            임직원은 정보 확인 시간을 줄여 본연의 업무에 집중하고,<br />
+            회원은 신속하고 정확한 피드백으로 협회에 대한 신뢰를 쌓아갑니다.
           </p>
 
           <p style={{
