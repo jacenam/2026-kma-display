@@ -3,8 +3,8 @@ import gsap from 'gsap'
 import SlideLayout from '../common/SlideLayout'
 import { useAutoPlay } from '../../contexts/AutoPlayContext'
 import displayMockup from '../../../assets/mockups/Apple Pro Display XDR.png'
-import clipImage from '../../../assets/images/slide04-clip-image-02.png'
-import clipVideo from '../../../assets/videos/slide04-clip02.mp4'
+import clipImage from '../../../assets/images/slide03-clip-image-02.png'
+import clipVideo from '../../../assets/videos/slide03-clip02.mp4'
 
 export default function Slide04_GeneralAI() {
   const ref = useRef(null)
@@ -265,8 +265,8 @@ export default function Slide04_GeneralAI() {
             lineHeight: 1.35, letterSpacing: '-0.02em', marginBottom: '1.5rem',
             whiteSpace: 'nowrap',
           }}>
-            강력한 보안 체계 위에서<br />
-            누리는 안전한 지식 공유
+            내부 데이터 기반의<br />
+            권한별 지식 공유
           </h2>
 
           <p style={{
@@ -285,9 +285,10 @@ export default function Slide04_GeneralAI() {
           <p style={{
             fontSize: '0.8125rem', color: '#64748b', lineHeight: 1.7,
           }}>
-            외부로 유출되어선 안 될 협회 지식 자산을 안전하게 보호합니다.<br />
-            직책과 역할에 따라 열람 가능한 정보를 엄격히 구분하여,<br />
-            행정 효율은 높이고 보안 리스크는 차단하는 스마트한 업무 환경을 제공합니다.
+            직원, 회원, 임원 등 권한에 따라서 협회 지식 자산을 분류하고<br />
+            허용된 정보만 정확하게 제공합니다.<br />
+            맞춤형 정보 제공을 실현하여 행정 효율을 높이고<br />
+            스마트한 업무 환경을 제공합니다.
           </p>
 
           <p style={{
