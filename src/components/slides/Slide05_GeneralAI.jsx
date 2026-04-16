@@ -23,18 +23,9 @@ export default function Slide05_GeneralAI() {
     return Math.abs(rect.top) < window.innerHeight * 0.5
   }
 
-  // Loop back to slide-01, but reload every N loops as a memory-safety net
-  // for accumulated browser media-decoder buffers we can't release manually.
-  const LOOPS_BEFORE_RELOAD = 10
-  const loopBackToStart = () => {
-    const count = parseInt(sessionStorage.getItem('loopCount') || '0', 10) + 1
-    if (count >= LOOPS_BEFORE_RELOAD) {
-      sessionStorage.setItem('loopCount', '0')
-      window.location.reload()
-      return
-    }
-    sessionStorage.setItem('loopCount', String(count))
-    document.getElementById('slide-01')?.scrollIntoView({ behavior: 'auto' })
+  // Advance to the next slide (slide-06, AD-review problem) after video ends.
+  const advanceToNext = () => {
+    document.getElementById('slide-06')?.scrollIntoView({ behavior: 'auto' })
   }
 
   // Stage 1 -> animate expansion, then enter stage 2 (video)
@@ -177,7 +168,7 @@ export default function Slide05_GeneralAI() {
       return () => clearTimeout(t)
     }
     if (stage === 2 && videoRef.current?.ended) {
-      loopBackToStart()
+      advanceToNext()
     }
   }, [isActiveSlide, isAutoPlaying, stage])
 
@@ -339,7 +330,7 @@ export default function Slide05_GeneralAI() {
                 const rect = ref.current.getBoundingClientRect()
                 if (Math.abs(rect.top) >= window.innerHeight * 0.5) return
                 if (!isAutoPlaying) return
-                loopBackToStart()
+                advanceToNext()
               }}
               style={{
                 display: 'block',

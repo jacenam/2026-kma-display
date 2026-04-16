@@ -36,7 +36,7 @@ export default function Slide01_Title() {
     if (!isActive || !isAutoPlaying) return
     const t = setTimeout(() => {
       document.getElementById('slide-02')?.scrollIntoView({ behavior: 'smooth' })
-    }, 3000)
+    }, 5000)
     return () => clearTimeout(t)
   }, [isActive, isAutoPlaying])
 
