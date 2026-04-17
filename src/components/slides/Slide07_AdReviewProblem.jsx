@@ -213,7 +213,7 @@ export default function Slide07_AdReviewProblem() {
                           display: 'inline-flex', alignItems: 'center', gap: '0.25rem',
                           marginTop: '0.5rem',
                         }}>
-                          <span style={{ fontSize: 'clamp(0.6875rem, 1.1vh, 1rem)', fontWeight: 700, color: '#e11d48' }}>
+                          <span style={{ fontSize: 'clamp(0.6875rem, 1.1vh, 1rem)', fontWeight: 700, color: '#e11d48', whiteSpace: 'nowrap' }}>
                             {step.hurdle}
                           </span>
                         </div>
@@ -251,7 +251,7 @@ export default function Slide07_AdReviewProblem() {
                           display: 'inline-flex', alignItems: 'center', gap: '0.25rem',
                           marginTop: '0.5rem',
                         }}>
-                          <span style={{ fontSize: 'clamp(0.6875rem, 1.1vh, 1rem)', fontWeight: 700, color: '#e11d48' }}>
+                          <span style={{ fontSize: 'clamp(0.6875rem, 1.1vh, 1rem)', fontWeight: 700, color: '#e11d48', whiteSpace: 'nowrap' }}>
                             {step.hurdle}
                           </span>
                         </div>
