@@ -92,7 +92,7 @@ export default function Slide01_Title() {
           letterSpacing: '-0.02em',
           whiteSpace: 'nowrap',
         }}>
-          2026 KMA 정기 대위원 총회
+          2026 KMA 정기 대의원 총회
         </h1>
       </div>
     </section>
