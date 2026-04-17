@@ -104,7 +104,7 @@ export default function Slide05_GeneralAI() {
             fontSize: '0.875rem', fontWeight: 700, color: '#4880f2',
             marginTop: '2.5rem', marginBottom: '0.5rem',
           }}>
-            모바일도 대응된 휴대성
+            기기 제약 없이 언제 어디서나
           </p>
           <p style={{
             fontSize: '0.8125rem', color: '#94a3b8', lineHeight: 1.7,

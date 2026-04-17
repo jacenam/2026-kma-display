@@ -273,7 +273,7 @@ export default function Slide04_GeneralAI() {
             fontSize: '1rem', color: '#334155', lineHeight: 1.8,
           }}>
             민감한 내부 정보부터 일반 공개 자료까지,<br />
-            권한별 정교한 필터링으로 정보 유출 없는 안전한 지식 관리를 실현합니다.
+            권한별 정교한 필터링으로 정보 유출 없이 사용자를 위한 지식 관리를 실현합니다.
           </p>
 
           <p className="s04-privacy-title" style={{
