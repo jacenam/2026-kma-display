@@ -142,7 +142,7 @@ export default function Slide06_GeneralAI() {
         document.getElementById('slide-06')?.scrollIntoView({ behavior: 'auto' })
       })
     } else if (phase === 'waiting') {
-      bTriggerTimerRef.current = setTimeout(() => setPhase('b-expanding'), 3000)
+      bTriggerTimerRef.current = setTimeout(() => setPhase('b-expanding'), 5000)
     } else if (phase === 'b-expanding') {
       expandToCenter(mockupBRef, () => setPhase('b-playing'))
     } else if (phase === 'b-playing') {
@@ -226,7 +226,7 @@ export default function Slide06_GeneralAI() {
   useEffect(() => {
     if (!isActiveSlide || !isAutoPlaying) return
     if (phase === 'idle') {
-      const t = setTimeout(() => setPhase('a-expanding'), 3000)
+      const t = setTimeout(() => setPhase('a-expanding'), 5000)
       return () => clearTimeout(t)
     }
     if (phase === 'b-playing' && videoBRef.current?.ended) {

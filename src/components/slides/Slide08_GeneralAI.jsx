@@ -182,7 +182,7 @@ export default function Slide08_GeneralAI() {
   useEffect(() => {
     if (!isActiveSlide || !isAutoPlaying) return
     if (stage === 0) {
-      const t = setTimeout(() => setStage(1), 3000)
+      const t = setTimeout(() => setStage(1), 5000)
       return () => clearTimeout(t)
     }
     if (stage === 2 && videoRef.current?.ended) {

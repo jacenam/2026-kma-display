@@ -67,7 +67,7 @@ export default function Slide07_AdReviewProblem() {
     if (!isActiveSlide || !isAutoPlaying) return
     const t = setTimeout(() => {
       document.getElementById('slide-07')?.scrollIntoView({ behavior: 'auto' })
-    }, 5000)
+    }, 7000)
     return () => clearTimeout(t)
   }, [isActiveSlide, isAutoPlaying])
 

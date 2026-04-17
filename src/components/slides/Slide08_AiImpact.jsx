@@ -84,7 +84,7 @@ export default function Slide08_AiImpact() {
       }
       sessionStorage.setItem('loopCount', String(count))
       document.getElementById('slide-01')?.scrollIntoView({ behavior: 'auto' })
-    }, 5000)
+    }, 7000)
     return () => clearTimeout(t)
   }, [isActiveSlide, isAutoPlaying])
 
