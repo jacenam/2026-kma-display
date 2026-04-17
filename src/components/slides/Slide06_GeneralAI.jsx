@@ -19,10 +19,10 @@ export default function Slide06_GeneralAI() {
   const videoBRef = useRef(null)
 
   const [phase, setPhase] = useState('idle')
-  // 'idle'               — initial (back → slide-05 via browser)
+  // 'idle'               — initial (back → slide-06 via browser)
   // 'a-expanding' | 'a-playing'
   // 'a-reversing'        — forward flow (→ waiting → B)
-  // 'a-reversing-back'   — back from a-playing (→ navigate to slide-05)
+  // 'a-reversing-back'   — back from a-playing (→ navigate to slide-06)
   // 'waiting'            — 3s between A and B
   // 'b-expanding' | 'b-playing'
   // 'b-reversing-back'   — back from b-playing (→ idle-post-b)
@@ -139,7 +139,7 @@ export default function Slide06_GeneralAI() {
         videoARef.current.currentTime = 0
       }
       reverseToIdle(mockupARef, () => {
-        document.getElementById('slide-05')?.scrollIntoView({ behavior: 'auto' })
+        document.getElementById('slide-06')?.scrollIntoView({ behavior: 'auto' })
       })
     } else if (phase === 'waiting') {
       bTriggerTimerRef.current = setTimeout(() => setPhase('b-expanding'), 3000)
@@ -485,9 +485,10 @@ export default function Slide06_GeneralAI() {
                 fontSize: '1rem', lineHeight: 1.55, color: '#0f172a', margin: 0,
                 wordBreak: 'keep-all',
               }}>
-                기다릴 필요 없이 신청과 동시에 AI 분석이 시작됩니다.
-                심의 통과 가능성을 미리 확인하고 취약점을 보완함으로써,
-                불필요한 반려 과정을 줄이고 심의 통과 시간을 압도적으로 단축합니다.
+                신청과 동시에 AI가 가이드라인 위반 가능성을 사전 검토합니다.
+                신청자는 접수 단계에서 통과 가능성을 확인하고,
+                담당자는 AI 1차 검토 결과를 기반으로 쟁점 있는 건에 집중할 수 있어
+                심의 통과 시간이 압도적으로 단축됩니다.
               </p>
               <p style={{
                 fontSize: '0.6875rem', color: '#94a3b8',
@@ -548,9 +549,10 @@ export default function Slide06_GeneralAI() {
                 fontSize: '1rem', lineHeight: 1.55, color: '#0f172a', margin: 0,
                 wordBreak: 'keep-all',
               }}>
-                최신 의료광고 심의 가이드라인을 바탕으로 수정이 필요한 위치를 정확히 표시합니다.
-                마우스만 올리면 어느 부분이 왜 문제인지 직관적으로 알려주어,
-                복잡한 가이드라인을 공부하지 않아도 완벽한 소재를 완성하도록 합니다.
+                최신 의료광고 심의 가이드라인을 근거로 문제 지점을 정확히 표시합니다.
+                어떤 문구에 문제가 있는지 직관적으로 확인할 수 있어,
+                심의 신청 전에 가이드라인을 학습하지 않아도
+                피드백에 따라 손쉽게 수정할 수 있습니다.
               </p>
             </div>
           </div>

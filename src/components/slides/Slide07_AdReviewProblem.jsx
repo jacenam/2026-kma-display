@@ -15,28 +15,28 @@ const STEPS = [
     num: 'STEP 2',
     label: '심의 신청·접수',
     desc: '대한의사협회에 광고 심의를 신청',
-    hurdle: '연간 45,000건 심의 요청 적체',
+    hurdle: '연간 45,000+ 심의 요청, 심의관 1인당 처리 부담 가중',
     side: 'right',
   },
   {
     num: 'STEP 3',
     label: '수기 검토',
     desc: '심의관이 의료법·가이드라인 기준으로 1건씩 수동 검토',
-    hurdle: '100% 인력 의존, 일관성 유지 어려움',
+    hurdle: '100% 인력 의존, 심의 처리 지연',
     side: 'left',
   },
   {
     num: 'STEP 4',
     label: '심의 결과 통보',
     desc: '승인/불승인 결과 및 사유 전달',
-    hurdle: '3주~3개월 소요',
+    hurdle: '결과 통보 지연으로 인한 불편 증가',
     side: 'right',
   },
   {
     num: 'STEP 5',
     label: '수정·재심의',
     desc: '불승인 시 수정 후 재신청, 처음부터 다시 대기',
-    hurdle: '추가 수개월, 기회 비용 극대화',
+    hurdle: '재심의 시 심의 자원의 이중 소모',
     side: 'left',
   },
 ]
@@ -87,6 +87,9 @@ export default function Slide07_AdReviewProblem() {
   return (
     <SlideLayout id="slide-06" ref={ref}>
       <style>{`
+        #slide-06 > .slide-content {
+          max-width: 1600px;
+        }
         .s07-dot-danger {
           animation: s07pulse 1s ease-in-out infinite;
         }
@@ -98,7 +101,7 @@ export default function Slide07_AdReviewProblem() {
       <div style={{ display: 'flex', gap: '3rem', height: '100%', alignItems: 'center' }}>
 
         {/* Left: Title */}
-        <div className="s07-header" style={{ flex: '0 0 28%' }}>
+        <div className="s07-header" style={{ flex: '0 0 auto' }}>
           <p style={{
             fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.15em',
             textTransform: 'uppercase', color: 'var(--color-primary)',
@@ -109,26 +112,26 @@ export default function Slide07_AdReviewProblem() {
           <h2 style={{
             fontSize: '2.5rem', fontWeight: 900, color: '#0f172a',
             lineHeight: 1.3, letterSpacing: '-0.02em', marginBottom: '1.25rem',
-            whiteSpace: 'nowrap',
+            wordBreak: 'keep-all',
           }}>
-            의료광고 심의의 벽
+            의료광고 심의의 행정적 병목
           </h2>
           <p style={{
             fontSize: '1rem', color: '#64748b', lineHeight: 1.7, marginBottom: '3.5rem',
-            whiteSpace: 'nowrap',
+            wordBreak: 'keep-all',
           }}>
-            최적의 광고 전략을 세웠어도, 실행 단계에서 마주치는 행정적 병목
+            수기 검토의 한계, 담당자의 부담과 신청자의 대기가 동시에 누적됩니다
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
             {[
-              { value: '3주~3개월', label: '평균 심의 소요' },
-              { value: '45,000+', label: '연간 심의 건수' },
-              { value: '100%', label: '수기 검토' },
+              { value: '3주~3개월', label: '누적 적체로 길어지는 평균 심의 소요' },
+              { value: '45,000+', label: '담당자에게 집중되는 연간 심의 접수' },
+              { value: '100%', label: '수기 검토 의존도' },
             ].map((s) => (
               <div key={s.label}>
-                <p style={{ fontSize: 'clamp(1.5rem, 2.5vh, 2.25rem)', fontWeight: 700, color: '#e11d48', lineHeight: 1 }}>{s.value}</p>
-                <p style={{ fontSize: 'clamp(0.75rem, 1.2vh, 1.125rem)', color: '#9f1239', marginTop: '1rem' }}>{s.label}</p>
+                <p style={{ fontSize: 'clamp(1.5rem, 2.5vh, 2.25rem)', fontWeight: 700, color: '#0f172a', lineHeight: 1 }}>{s.value}</p>
+                <p style={{ fontSize: 'clamp(0.75rem, 1.2vh, 1.125rem)', color: '#e11d48', marginTop: '1rem' }}>{s.label}</p>
               </div>
             ))}
           </div>
@@ -173,8 +176,8 @@ export default function Slide07_AdReviewProblem() {
                   position: 'absolute', top: '50%',
                   transform: 'translateY(-50%)',
                   ...(step.side === 'left'
-                    ? { right: '40%', marginRight: '7px', width: '5rem' }
-                    : { left: '60%', marginLeft: '7px', width: '5rem' }
+                    ? { right: '40%', marginRight: '7px', width: '3rem' }
+                    : { left: '60%', marginLeft: '7px', width: '3rem' }
                   ),
                   height: '0px',
                   borderTop: `2px dashed ${step.hurdle ? '#fecdd3' : '#cbd5e1'}`,
@@ -185,7 +188,7 @@ export default function Slide07_AdReviewProblem() {
                 <div style={{
                   flex: '0 0 60%',
                   textAlign: 'right',
-                  paddingRight: '7rem',
+                  paddingRight: '4rem',
                 }}>
                   {step.side === 'left' && (
                     <div className="s07-step">
@@ -223,7 +226,7 @@ export default function Slide07_AdReviewProblem() {
                 <div style={{
                   flex: '0 0 40%',
                   textAlign: 'left',
-                  paddingLeft: '7rem',
+                  paddingLeft: '4rem',
                 }}>
                   {step.side === 'right' && (
                     <div className="s07-step">

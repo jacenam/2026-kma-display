@@ -15,9 +15,8 @@ const CARDS = [
         <polyline points="10 9 9 9 8 9" />
       </svg>
     ),
-    before: '의료법·심의가이드라인을 ',
-    highlight: '100% 참고',
-    after: '한 법규 추론 LLM 모델.',
+    header: '일관된 기준으로 판단하는 AI 심의',
+    desc: '의료법, 심의 가이드라인을 100% 참고한 법규 추론 LLM 모델이 빠르고 일관성 있게 심의합니다',
   },
   {
     id: 'human',
@@ -30,9 +29,8 @@ const CARDS = [
         <path d="M16 3.13a4 4 0 0 1 0 7.75" />
       </svg>
     ),
-    before: '',
-    highlight: 'AI + Human-in-the-Loop',
-    after: ' 구조로 신뢰도와 전문성을 동시에 확보.',
+    header: 'AI + Human-in-the-Loop',
+    desc: 'AI의 1차 심의에 담당자의 최종 검토가 더해지는 2중 구조로, 속도와 정확도를 동시에 확보합니다. 예외 상황에서는 담당자가 최종 판단을 내려 유연하게 대응합니다.',
   },
   {
     id: 'speed',
@@ -42,9 +40,8 @@ const CARDS = [
         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
       </svg>
     ),
-    before: '3주~3개월 심의 기간을 ',
-    highlight: '1~3일',
-    after: '로 압도적 단축.',
+    header: '심의의 양과 질, 동시에 개선합니다',
+    desc: 'AI 의료광고 심의로 수기 검토 시간을 대폭 단축하고, 확보된 여력만큼 더 정밀한 최종 검토가 가능해집니다.',
   },
 ]
 
@@ -112,8 +109,8 @@ export default function Slide08_AiImpact() {
             lineHeight: 1.1, letterSpacing: '-0.03em',
             margin: 0,
           }}>
-            AI 의료광고 심의로<br />
-            이어지는 <span style={{ color: '#4780f2' }}>변화</span>.
+            AI 의료광고 심의,<br />
+            새로운 <span style={{ color: '#4780f2' }}>지평</span>을 엽니다.
           </h2>
         </div>
 
@@ -136,14 +133,19 @@ export default function Slide08_AiImpact() {
               </div>
 
               <p style={{
-                fontSize: '1.4rem', fontWeight: 700, color: '#0f172a',
+                fontSize: '1.4rem', fontWeight: 700, color: card.color,
                 lineHeight: 1.35, letterSpacing: '-0.01em',
-                margin: 0,
+                margin: 0, marginBottom: '0.75rem',
                 wordBreak: 'keep-all',
               }}>
-                {card.before}
-                <span style={{ color: card.color }}>{card.highlight}</span>
-                {card.after}
+                {card.header}
+              </p>
+              <p style={{
+                fontSize: '0.9rem', color: '#64748b',
+                lineHeight: 1.6, margin: 0,
+                wordBreak: 'keep-all',
+              }}>
+                {card.desc}
               </p>
 
               {/* Checkmark (bottom right) — signals achieved outcome */}
