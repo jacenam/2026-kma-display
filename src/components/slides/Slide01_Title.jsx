@@ -80,7 +80,7 @@ export default function Slide01_Title() {
         padding: '0 4rem',
       }}>
         <p className="s01-label" style={{
-          fontSize: '1rem', fontWeight: 700, letterSpacing: '0.08em',
+          fontSize: '1.5rem', fontWeight: 700, letterSpacing: '0.08em',
           color: 'var(--color-primary)',
           marginBottom: '1.25rem',
         }}>
