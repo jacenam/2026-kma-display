@@ -84,7 +84,7 @@ export default function Slide01_Title() {
           color: 'var(--color-primary)',
           marginBottom: '1.25rem',
         }}>
-          대한의사협회 통합정보시스템 리뉴얼 소개
+          2026 KMA 정기 대의원 총회
         </p>
 
         <h1 className="s01-title s01-kma" style={{
@@ -92,7 +92,7 @@ export default function Slide01_Title() {
           letterSpacing: '-0.02em',
           whiteSpace: 'nowrap',
         }}>
-          2026 KMA 정기 대의원 총회
+          대한의사협회 통합정보시스템 리뉴얼 소개
         </h1>
       </div>
     </section>
