@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import SlideLayout from '../common/SlideLayout'
 import { useAutoPlay } from '../../contexts/AutoPlayContext'
-import clipVideo from '../../../assets/videos/slide05-clip04.mov'
+import clipVideo from '../../../assets/videos/slide05-clip04.mp4'
 
 export default function Slide05_GeneralAI() {
   const ref = useRef(null)
