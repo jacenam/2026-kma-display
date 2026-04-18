@@ -86,7 +86,7 @@ export default function Slide08_GeneralAI() {
   useEffect(() => {
     if (!ref.current) return
     ref.current.style.transition = 'background-color 0.4s ease-in-out'
-    ref.current.style.backgroundColor = darkTheme ? '#242424' : '#ffffff'
+    ref.current.style.backgroundColor = darkTheme ? '#282828' : '#ffffff'
   }, [darkTheme])
 
   // Reverse animation: scale/position back to stage 0, fade text in, swap video -> image

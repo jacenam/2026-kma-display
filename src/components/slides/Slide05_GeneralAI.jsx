@@ -12,7 +12,7 @@ export default function Slide05_GeneralAI() {
   // Slide-05 bg is permanently dark.
   useEffect(() => {
     if (!ref.current) return
-    ref.current.style.backgroundColor = '#242424'
+    ref.current.style.backgroundColor = '#282828'
   }, [])
 
   // Advance to slide-06 when video ends.
@@ -127,7 +127,7 @@ export default function Slide05_GeneralAI() {
         }}>
           <div style={{
             position: 'relative',
-            width: '24rem',
+            width: '22rem',
           }}>
             <video
               ref={videoRef}
@@ -147,7 +147,7 @@ export default function Slide05_GeneralAI() {
                 width: '100%',
                 height: 'auto',
                 objectFit: 'contain',
-                background: '#000',
+                background: 'transparent',
               }}
             />
           </div>
